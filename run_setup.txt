@@ -1,0 +1,10 @@
+git clone https://github.com/dvschultz/stylegan3
+cp gen_images_new.py stylegan3
+cd stylegan3
+mkdir pretrained
+cd pretrained
+#gdown --id 1-5xZkD8ajXw1DdopTkH_rAoCsD72LhKU
+wget --content-disposition https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/zip -O stylegan3_1.zip
+unzip stylegan3_1.zip
+
+pip install Ninja opensimplex

@@ -1,0 +1,22 @@
+source config_file.py
+
+if (($resume_ckpt == 'none'));
+then
+    echo " No pretrained checkpoint selected "
+
+    python3 stylegan3/train.py --outdir=$experiment_dir  --data=$path_processed_images \
+    --cfg=$cfg \
+    --aug=$aug \
+    --gpus=$gpus --batch=$batch --batch-gpu=$batch_gpu --gamma=$gamma \
+    --mirror=$mirror --kimg=$kimg --snap=$snap \
+    --metrics=None
+else
+    echo " Resuming training from $resume_ckpt "
+    python3 stylegan3/train.py --outdir=$experiment_dir  --data=$path_processed_images \
+    --cfg=$cfg \
+    --aug=$aug \
+    --gpus=$gpus --batch=$batch --batch-gpu=$batch_gpu --gamma=$gamma \
+    --mirror=$mirror --kimg=$kimg --snap=$snap \
+    --metrics=None \
+    --resume=$resume_ckpt
+fi
