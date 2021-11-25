@@ -2,9 +2,9 @@
 A stylegan3 refactored code for easy inference and taining.
 
 ## Instructions for initialization
+```
 git clone https://github.com/waleedrazakhan92/stylegan3_train.git
 
-```
 cd stylegan3_train
 
 chmod +x *
